@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react';
+import { noop } from '../utils/helpers';
 
 /**
  * `useInterval` sets up an interval and clears it after unmounting.
  * It’s a combo of setInterval and clearInterval tied to the component lifecycle.
- * 
+ *
  * @link https://overreacted.io/making-setinterval-declarative-with-react-hooks/
- * @param callback 
- * @param delay 
+ * @param callback
+ * @param delay
  */
 export function useInterval(callback: () => void, delay: number) {
-  const savedCallback = useRef();
+  const savedCallback = useRef<VoidFunction>(noop);
   // Remember the latest callback.
   useEffect(() => {
     savedCallback.current = callback;
