@@ -9,11 +9,28 @@
   padding: 0;
 }
 
+/* body {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 300;
+} */
+
 @layer components {
   /* custom tailwind utility class composed of tailwind classes (@apply combine utilities into a single class) */
-  .foo {
-    @apply m-0 p-0
+  .filter-button {
+    @apply border rounded mx-1 py-0 px-2 text-inherit border-solid border-transparent no-underline hover:border-[rgba(175,47,47,0.1)] 
+  }
+
+  .footer {
+    @apply h-12 text-neutral-400 font-light text-center py-[10px] px-[15px] border-t border-solid border-[#e6e6e6] before:content-[''] before:absolute before:right-0 before:left-0 before:bottom-0 before:h-12 before:overflow-hidden before:shadow-[0_1px_1px_rgba(0,0,0,0.2),0_8px_0_-3px_#f6f6f6,0_9px_1px_-3px_rgba(0,0,0,0.2),0_16px_0_-6px_#f6f6f6,0_17px_2px_-6px_rgba(0,0,0,0.2)]
   }
 }
 
 @tailwind utilities;
+
+@layer utilities {
+  .input-placeholder::placeholder {
+    @apply italic font-light text-[#e6e6e6]
+  }
+}
