@@ -1,18 +1,17 @@
 import { createContext, ReactNode, useReducer, useContext, useEffect } from 'react';
+import { LOCAL_STORAGE_KEY } from '../constants';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { initialState, reducer } from '../reducers/todoReducer';
 import { Action, State } from '../types';
 
 type StoreProviderProps = {
-  children: ReactNode;
+  readonly children: ReactNode;
 };
 
 type StoreContext = {
   dispatch: React.Dispatch<Action>;
   state: State;
 };
-
-const LOCAL_STORAGE_KEY = 'todo-mvc-state';
 
 const store = createContext<StoreContext>({
   state: initialState,
@@ -36,7 +35,7 @@ export const StoreProvider = ({ children }: StoreProviderProps) => {
 
   useEffect(() => {
     persistToLocalStorage(state);
-  }, [state.todos, state.filter]);
+  }, [state, state.todos, state.filter, persistToLocalStorage]);
 
   return <store.Provider value={{ state, dispatch }}>{children}</store.Provider>;
 };

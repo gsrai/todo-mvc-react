@@ -9,13 +9,6 @@
   padding: 0;
 }
 
-/* body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-weight: 300;
-} */
-
 @layer components {
   /* custom tailwind utility class composed of tailwind classes (@apply combine utilities into a single class) */
   .filter-button {

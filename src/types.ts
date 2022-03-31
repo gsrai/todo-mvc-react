@@ -1,6 +1,7 @@
+import { Filters } from './constants';
 import { ActionTypes } from './reducers/todoReducer';
 
-export type Filter = 'all' | 'active' | 'completed';
+export type Filter = typeof Filters[number];
 
 export type ID = string;
 
