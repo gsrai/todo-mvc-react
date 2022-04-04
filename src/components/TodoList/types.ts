@@ -1,4 +1,11 @@
-import { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from 'react';
+import {
+  ButtonHTMLAttributes,
+  ChangeEventHandler,
+  FocusEventHandler,
+  InputHTMLAttributes,
+  KeyboardEventHandler,
+  LabelHTMLAttributes
+} from 'react';
 import { ID, Todo } from '../../types';
 
 export type TodoListItemProps = {
@@ -6,19 +13,19 @@ export type TodoListItemProps = {
   readonly todoId: ID;
 };
 
-export type ToggleAllInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+export type ToggleAllInputProps = InputHTMLAttributes<HTMLInputElement>;
 
-export type ToggleAllLabelProps = React.LabelHTMLAttributes<HTMLLabelElement>;
+export type ToggleAllLabelProps = LabelHTMLAttributes<HTMLLabelElement>;
 
-export type CheckboxLabelProps = React.LabelHTMLAttributes<HTMLLabelElement>;
+export type CheckboxLabelProps = LabelHTMLAttributes<HTMLLabelElement>;
 
-export type RemoveButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type RemoveButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type TodoTextLabelProps = React.LabelHTMLAttributes<HTMLLabelElement> & {
+export type TodoTextLabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
   readonly completed: boolean;
 };
 
-export type EditInputProps = React.InputHTMLAttributes<HTMLInputElement> &
+export type EditInputProps = InputHTMLAttributes<HTMLInputElement> &
   TodoListItemProps;
 
 export type TodoListProps = {
