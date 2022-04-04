@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 /**
  * `usePrevProps` stores the previous value of the prop.
@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
  * @param {K} value
  * @returns {K | undefined}
  */
- export const usePrevProps = <K = any>(value: K) => {
+export const usePrevProps = <K = any>(value: K) => {
   const ref = useRef<K>();
 
   useEffect(() => {
