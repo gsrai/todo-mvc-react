@@ -14,7 +14,7 @@ import {
 } from './reducers/todoReducer';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import TodoList from './components/TodoList';
+import { TodoList } from './components/TodoList';
 
 const ENTER_KEY = 'Enter';
 const ESCAPE_KEY = 'Escape';
